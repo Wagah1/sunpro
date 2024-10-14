@@ -1,0 +1,77 @@
+:root {
+  --main-green: #146204;
+  --dark-green: #1b5e20;
+  --medium-green: #388e3c;
+  --light-green: #66bb6a;
+  --pastel-green: #a5d6a7;
+  --white: #f4f5f4;
+}
+
+#intro {
+  background-image: url("../intro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  align-content: center;
+  margin-top: 0;
+}
+
+#text {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 7px;
+  justify-content: left;
+  height: fit-content;
+  width: fit-content;
+  max-width: 40em;
+  margin-left: 5em;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  border: 1px solid rgba(27, 94, 32, 0.18);
+  padding: 0 2em;
+}
+
+#text h2 {
+  font-family: Palatino, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: 600;
+  text-align: left;
+  color: var(--white);
+}
+
+#text h3 {
+  font-family: Palatino, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 100;
+  text-align: left;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 700px) {
+  #intro {
+    margin-top: -2em;
+    justify-content: center;
+  }
+
+  #text {
+    max-width: 75vw;
+    margin: 1em;
+  }
+
+  #text h2 {
+    text-align: center;
+  }
+
+  #text h1 {
+    text-align: center;
+  }
+}

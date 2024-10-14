@@ -5,10 +5,12 @@
   --light-green: #66bb6a;
   --pastel-green: #a5d6a7;
   --white: #f4f5f4;
+  --orange: #ff6700;
 }
 
 nav {
   width: 100%;
+  left: 0;
   padding: 0.5em;
   min-height: 4em;
   height: fit-content;
@@ -19,16 +21,20 @@ nav {
   top: 0;
   justify-content: space-between;
   margin: 0;
+  position: fixed;
 }
 
 nav img {
   height: 3.5em;
   margin-left: 0.5em;
   transition: transform 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
 nav img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .nav-links {
@@ -42,7 +48,7 @@ nav img:hover {
   height: fit-content;
 }
 
-.nav-links a {
+.navItem {
   margin: 0 1em;
   align-content: center;
   padding: 0.7em 1em;
@@ -50,15 +56,74 @@ nav img:hover {
   transition: border 0.3s ease-in-out;
   text-decoration: none;
   color: var(--dark-green);
-  font-weight: 450;
+  font-weight: 500;
   text-align: center;
   height: fit-content;
+  position: relative;
 }
 
-.nav-links a:hover {
+.navItem:hover {
   background: var(--dark-green);
   color: var(--white);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dropMenu {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(27, 94, 32, 0.18);
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  color: var(--dark-green);
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  z-index: 99;
+  top: 3.5em;
+  width: fit-content;
+  min-width: 10em;
+  list-style-type: none;
+  text-align: left;
+  margin: -1em 0 0 -1em;
+}
+
+.dropItem {
+  text-wrap: none;
+  margin: 1em;
+  position: relative;
+  display: block;
+}
+
+.dropItem::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.dropItem:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.dropMenu:hover {
+  display: block;
+}
+
+#shop:hover #shopMenu {
+  display: block;
+}
+
+#services:hover #servicesMenu {
+  display: block;
 }
 
 .mobile {
@@ -73,6 +138,7 @@ nav img:hover {
     border-radius: 5px;
     position: absolute;
     right: 3em;
+    cursor: pointer;
   }
 
   .mobile img {
@@ -84,7 +150,7 @@ nav img:hover {
     background: none;
     height: fit-content;
     align-items: flex-start;
-    top: 0;
+    margin-top: 0;
   }
 
   .nav-links {
@@ -94,7 +160,7 @@ nav img:hover {
     background: var(--white);
     height: fit-content;
     top: 4em;
-    width: fit-content;
+    width: 15em;
     margin-top: 2em;
     padding: 0.5em 0;
     border: 1px solid var(--dark-green);
@@ -111,11 +177,16 @@ nav img:hover {
     margin-right: 0;
   }
 
-  .nav-links a {
+  .navItem {
     text-align: left;
     padding: 0.5em;
     width: 80%;
     border-radius: 3px;
-    margin-left: 1.5em;
+    margin-left: 0;
+  }
+
+  .dropMenu {
+    margin-top: -1.3em;
+    margin-left: -0.5em;
   }
 }

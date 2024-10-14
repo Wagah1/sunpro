@@ -8,10 +8,20 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
   return (
     <>
       <nav>
-        <img src="../sunpro4a.png"></img>
+        <img src="sunpro4a.png"></img>
         <div className="mobile" onClick={toggleMenu}>
           <img
             src={isOpen ? "../exe.png" : "../bar.png"}
@@ -20,16 +30,48 @@ const Navbar: React.FC = () => {
         </div>
         <div>
           <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-            <a href="sunpro-shop.html">
-              <li>Shop</li>
-            </a>
-            <a href="sunpro-services.html">
-              <li>What we do</li>
-            </a>
-            <a href="sunpro-partners.html">
+            <li
+              className="navItem"
+              id="shop"
+              onMouseEnter={toggleDropdown}
+              onMouseLeave={closeDropdown}
+            >
+              Shop
+              <ul
+                className={`dropMenu ${isDropdownOpen ? "show" : ""}`}
+                id="shopMenu"
+              >
+                <li className="dropItem">Solar panels</li>
+                <li className="dropItem">Solar inverters</li>
+                <li className="dropItem">Solar batteries</li>
+                <li className="dropItem">Solar floodlights</li>
+                <li className="dropItem">Decorative lights</li>
+                <li className="dropItem">Electricals</li>
+                <li className="dropItem">Sunking</li>
+              </ul>
+            </li>
+            <li
+              className="navItem"
+              id="services"
+              onMouseEnter={toggleDropdown}
+              onMouseLeave={closeDropdown}
+            >
+              What we do
+              <ul
+                className={`dropMenu ${isDropdownOpen ? "show" : ""}`}
+                id="servicesMenu"
+              >
+                <li className="dropItem">Solar installation</li>
+                <li className="dropItem">Electrical Wiring</li>
+                <li className="dropItem">Solar water heater</li>
+                <li className="dropItem">Maintenance and Others</li>
+                <li className="dropItem">Consultation</li>
+              </ul>
+            </li>
+            <a href="sunpro-partners.html" className="navItem" id="partners">
               <li>Our partners</li>
             </a>
-            <a href="sunpro-contacts.html">
+            <a href="sunpro-contacts.html" className="navItem" id="contacts">
               <li>Contact us</li>
             </a>
           </ul>
