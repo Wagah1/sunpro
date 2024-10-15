@@ -6,10 +6,15 @@ const Intro = () => {
       <div id="intro">
         <div id="text">
           <h2>Save big on energy bills!</h2>
+          <hr />
           <h3>
-            Start generating your own electricity today, and using water heated
-            by the sun
+            <b>*Protip: </b>Harness Solar Power to Energize Your Home and Heat
+            Your Water!
           </h3>
+          <div id="btn">
+            <p>See how</p>
+            <img src="../arrow-white.png" alt=" " />
+          </div>
         </div>
       </div>
     </>

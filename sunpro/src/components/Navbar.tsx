@@ -62,14 +62,15 @@ const Navbar: React.FC = () => {
                 id="servicesMenu"
               >
                 <li className="dropItem">Solar installation</li>
-                <li className="dropItem">Electrical Wiring</li>
+                <li className="dropItem">Electrical Services</li>
                 <li className="dropItem">Solar water heater</li>
-                <li className="dropItem">Maintenance and Others</li>
+                <li className="dropItem">Networks & CCTV</li>
+                <li className="dropItem">Maintenance & Others</li>
                 <li className="dropItem">Consultation</li>
               </ul>
             </li>
-            <a href="sunpro-partners.html" className="navItem" id="partners">
-              <li>Our partners</li>
+            <a href="#blog&offers" className="navItem" id="blog&offers">
+              <li>News & Offers</li>
             </a>
             <a href="sunpro-contacts.html" className="navItem" id="contacts">
               <li>Contact us</li>

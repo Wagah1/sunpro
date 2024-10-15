@@ -1,0 +1,236 @@
+:root {
+  --main-green: #146204;
+  --dark-green: #1b5e20;
+  --medium-green: #388e3c;
+  --light-green: #66bb6a;
+  --pastel-green: #a5d6a7;
+  --white: #f4f5f4;
+  --orange: #ff6700;
+  --grey: #272727;
+  --black: #000;
+  --lighter-grey: #4d4d4d;
+}
+
+#servicesDiv {
+  background-color: var(--pastel-green);
+  width: 100vw;
+  height: auto;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+    sans-serif;
+}
+
+#solar {
+  background-image: url("../panels.jpg");
+}
+
+#electricals {
+  background-image: url("../electrical.jpg");
+}
+
+#water-heater {
+  background-image: url("../water-heater.jpg");
+}
+
+#cctv {
+  background-image: url("../cctv.jpg");
+}
+
+.service {
+  position: relative;
+  width: 25em;
+  height: 25em;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border-radius: 10%;
+  margin: 1em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-fade {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+}
+
+.words {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.5em;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  bottom: -32%;
+  text-decoration: solid;
+}
+
+.words h2 {
+  margin: 0;
+  font-weight: 450;
+}
+
+.words p {
+  text-align: center;
+  margin: 0.5em 0;
+  line-height: 1.3;
+  font-weight: 500;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+.service:hover .words {
+  bottom: 0;
+  opacity: 1;
+}
+
+.learn {
+  height: fit-content;
+  width: fit-content;
+  background-color: none;
+  color: var(--white);
+  border-radius: 7px;
+  padding: 0 0.7em;
+  font-weight: 300;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 0.5em;
+}
+
+.learn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(1px); /* For Safari */
+}
+
+.learn img {
+  max-width: 0.8em;
+  max-height: 0.8em;
+  margin-left: 0.3em;
+  padding: 0.1em;
+}
+
+.learn p {
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+#quality {
+  width: 50em;
+  height: 25em;
+  border-radius: 10%;
+  margin: 1em;
+  padding: 1em;
+}
+
+#quality p {
+  margin: 0.5em 1em;
+  font-size: 1.5em;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+#quality h2 {
+  font-size: 2em;
+  line-height: 1.2;
+  margin: 1em 1em 0.5em 1em;
+  font-weight: 450;
+  text-decoration: 1px underline;
+}
+
+#happy {
+  display: flex;
+  align-items: center;
+}
+
+#count {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  border-radius: 5px;
+  display: flex;
+  font-size: 1.5em;
+  font-weight: 100;
+  align-items: center;
+  padding: 0.1em 0.4em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  color: var(--dark-green);
+}
+
+#count p {
+  margin: 0;
+  margin-left: 0.2em;
+  font-size: 1em;
+}
+
+#hire {
+  height: fit-content;
+  width: fit-content;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(1px); /* For Safari */
+  color: var(--black);
+  border-radius: 5px;
+  padding: 0.5em;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#hire:hover {
+  background-color: var(--dark-green);
+  color: var(--white);
+}
+
+#hire p {
+  margin: 0 0.2em;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+#hire img {
+  max-width: 1.2em;
+  max-height: 1.2em;
+  margin: 0 0.2em;
+}
+
+@media screen and (max-width: 700px) {
+  #servicesDiv {
+    justify-content: center;
+  }
+
+  #quality {
+    justify-content: center;
+    margin-top: -3em;
+  }
+
+  #quality h2,
+  p {
+    text-align: center;
+  }
+
+  #happy {
+    flex-direction: column;
+  }
+}
