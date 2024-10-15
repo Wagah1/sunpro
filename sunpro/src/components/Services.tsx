@@ -23,8 +23,8 @@ function Services() {
           <div className="words">
             <h2>Solar Installation</h2>
             <p>
-              Save power costs by getting a fully off-grid solar power system.
-              Guaranteed money-back in three years max!
+              Save power costs by getting a hybrid solar power system. Forget
+              about unstable -low quality power and blackouts
             </p>
             <div className="learn">
               <p>Learn more</p>
@@ -87,7 +87,7 @@ function Services() {
           installed and built to last
         </p>
         <div id="happy">
-          <p>Add to our list of </p>
+          <p>Join our </p>
           <div id="count">
             {count}
             <p>+</p>

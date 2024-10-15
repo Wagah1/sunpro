@@ -79,7 +79,8 @@ hr {
   border-radius: 7px;
   font-size: 1.1em;
   padding: 0 0.7em;
-  margin-bottom: 1.5em;
+  right: 1em;
+  margin: 0.5em 0 1em 0;
   font-weight: 400;
   transition: 0.3s ease-in-out;
   display: flex;
@@ -96,6 +97,7 @@ hr {
   max-width: 0.8em;
   max-height: 0.8em;
   margin-left: 0.3em;
+  margin-top: 0.2em;
   padding: 0.1em;
 }
 

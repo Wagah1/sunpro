@@ -156,21 +156,20 @@
 
 #happy {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+}
+
+#happy p {
+  margin: 0.5em;
 }
 
 #count {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(5px); /* For Safari */
-  border-radius: 5px;
   display: flex;
   font-size: 1.5em;
-  font-weight: 100;
+  font-weight: 500;
   align-items: center;
-  padding: 0.1em 0.4em;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  font-weight: 600;
   color: var(--dark-green);
 }
 
@@ -178,6 +177,7 @@
   margin: 0;
   margin-left: 0.2em;
   font-size: 1em;
+  font-weight: 300;
 }
 
 #hire {
@@ -228,9 +228,5 @@
   #quality h2,
   p {
     text-align: center;
-  }
-
-  #happy {
-    flex-direction: column;
   }
 }
