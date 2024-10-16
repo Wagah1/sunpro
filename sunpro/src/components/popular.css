@@ -1,6 +1,5 @@
 :root {
-  --main-green: #146204;
-  --dark-green: #1b5e20;
+  --dark-green: #146204;
   --medium-green: #388e3c;
   --light-green: #66bb6a;
   --pastel-green: #a5d6a7;
@@ -23,27 +22,52 @@
   display: block;
 }
 
-#popular h2 {
+#top {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  align-items: center;
+  margin: 0 1em;
+}
+
+#top h2 {
   font-weight: 450;
-  margin: 0 0 -0.5em 2em;
+}
+
+#top button {
+  padding: 0.5em 1em;
+  border: none;
+  background-color: var(--dark-green);
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+  margin-right: 3em;
+  line-height: 1.5;
+}
+
+#top button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--medium-green);
 }
 
 #packages {
-  margin: 0.5em;
   position: relative;
   padding: 1em;
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
+  justify-content: center;
 }
 
 .package {
   cursor: pointer;
-  width: 25em;
-  height: 25em;
+  width: 23em;
+  height: 23em;
   border-radius: 5%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin: 1em;
+  margin: 1em 2em;
   transition: 0.3s ease-in-out;
 }
 
@@ -104,6 +128,7 @@ h3 {
 
 .order:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--medium-green);
 }
 
 .close-button {

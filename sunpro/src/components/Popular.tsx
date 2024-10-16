@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./popular.css";
 
 function Popular() {
-  const [visiblePopup, setVisiblePopup] = useState(null);
+  const [visiblePopup, setVisiblePopup] = useState<string | null>(null);
 
-  const handleImageClick = (id) => {
+  const handleImageClick = (id: string) => {
     setVisiblePopup(id);
   };
 
@@ -14,7 +14,10 @@ function Popular() {
 
   return (
     <div id="popular">
-      <h2>Popular solar packages:</h2>
+      <div id="top">
+        <h2>Popular solar packages:</h2>
+        <button>I want a custom quote</button>
+      </div>
       <div id="packages">
         <div
           className="package"

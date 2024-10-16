@@ -4,7 +4,7 @@ import "./services.css";
 function Services() {
   const [count, setCount] = useState(0);
   const target = 1000;
-  const duration = 500;
+  const duration = 2000;
   const interval = duration / target;
 
   useEffect(() => {

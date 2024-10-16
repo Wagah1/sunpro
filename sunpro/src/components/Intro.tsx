@@ -11,10 +11,6 @@ const Intro = () => {
             <b>*Protip: </b>Harness Solar Power to Energize Your Home and Heat
             Your Water!
           </h3>
-          <div id="btn">
-            <p>See how</p>
-            <img src="../arrow-white.png" alt=" " />
-          </div>
         </div>
       </div>
     </>
