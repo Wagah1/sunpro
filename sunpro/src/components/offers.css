@@ -17,13 +17,29 @@
   padding: 1em;
   width: 100%;
   overflow-x: scroll;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+    sans-serif;
+}
+
+#top {
+  align-items: center;
+  width: 100vw;
+  display: flex;
+}
+
+#top h3 {
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
 .scroll-container {
   display: flex;
-  scroll-behavior: smooth;
   margin: 2em 0;
   width: fit-content;
+  flex: 1;
+  will-change: transform;
+  transition: all 0.5s ease-in-out;
 }
 
 #scroll-btns {
@@ -64,9 +80,10 @@
   overflow: hidden;
   border-radius: 5%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--yellow);
+  border: 2px solid var(--white);
   position: relative;
   display: inline-flex;
+  transition: 0.5s ease-in-out;
 }
 
 .offer-item img {
@@ -80,8 +97,8 @@
   width: 100%;
   height: 100%;
   padding: 1em;
-  color: var(--grey);
-  background-color: var(--yellow);
+  color: var(--white);
+  background-color: var(--dark-green);
   transition: all 0.3s ease-in-out;
   bottom: -93.5%;
 }
@@ -119,7 +136,8 @@
 }
 
 .details a {
-  color: var(--black);
+  text-decoration: underline;
+  color: var(--white);
 }
 
 .offer-item:hover .details {
@@ -127,22 +145,57 @@
   opacity: 1;
 }
 
-.buy {
+.end-btns {
   position: absolute;
-  right: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  right: 1.75em;
+  bottom: 2.5em;
+  width: 10em;
+}
+
+.buy {
   padding: 0.5em 1em;
   border: none;
-  background-color: var(--grey);
+  background-color: var(--dark-green);
   color: white;
   cursor: pointer;
   font-size: 0.9em;
   transition: 0.3s ease-in-out;
   border-radius: 5px;
   line-height: 1.5;
-  bottom: 2.5em;
+  border: 1px solid var(--medium-green);
+  align-content: center;
 }
 
 .buy:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: var(--lighter-grey);
+  background-color: var(--medium-green);
+}
+
+.share {
+  background: var(--dark-green);
+  border-radius: 5px;
+  cursor: pointer;
+  width: 2.75em;
+  height: 2.75em;
+  border: none;
+  margin: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--medium-green);
+  transition: 0.3s ease-in-out;
+}
+
+.share:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--medium-green);
+}
+
+.share img {
+  width: 1.75em;
+  height: auto;
 }

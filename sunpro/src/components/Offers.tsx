@@ -8,20 +8,29 @@ function Offers() {
   const scrollNext = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const firstChild = container.firstElementChild;
-      if (firstChild) {
-        container.appendChild(firstChild);
-      }
+      container.style.transition = "transform 0.5s ease-in-out";
+      container.style.transform = "translateX(-18em)";
+      setTimeout(() => {
+        container.style.transition = "none";
+        container.style.transform = "translateX(0)";
+        container.appendChild(container.firstElementChild as Node);
+      }, 500);
     }
   };
 
   const scrollPrev = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const lastChild = container.lastElementChild;
-      if (lastChild) {
-        container.insertBefore(lastChild, container.firstElementChild);
-      }
+      container.style.transition = "none";
+      container.insertBefore(
+        container.lastElementChild as Node,
+        container.firstElementChild
+      );
+      container.style.transform = "translateX(-18em)";
+      setTimeout(() => {
+        container.style.transition = "transform 0.5s ease-in-out";
+        container.style.transform = "translateX(0)";
+      }, 0);
     }
   };
 
@@ -32,7 +41,7 @@ function Offers() {
     }
     scrollTimeout.current = setTimeout(() => {
       setIsMouseActive(false);
-    }, 5000);
+    }, 10000);
   };
 
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -41,7 +50,7 @@ function Offers() {
     if (!isMouseActive) {
       scrollTimeout.current = setInterval(() => {
         scrollNext();
-      }, 5000);
+      }, 10000);
     } else {
       if (scrollTimeout.current) {
         clearInterval(scrollTimeout.current);
@@ -70,13 +79,16 @@ function Offers() {
 
   return (
     <div id="horizontal-scroll-container">
-      <div id="scroll-btns">
-        <button onClick={scrollPrev} className="scroll-button">
-          <img src="../previous.png" alt=" " />
-        </button>
-        <button onClick={scrollNext} className="scroll-button">
-          <img src="../next.png" alt=" " />
-        </button>
+      <div id="top">
+        <h3>Featured packages</h3>
+        <div id="scroll-btns">
+          <button onClick={scrollPrev} className="scroll-button">
+            <img src="../previous.png" alt=" " />
+          </button>
+          <button onClick={scrollNext} className="scroll-button">
+            <img src="../next.png" alt=" " />
+          </button>
+        </div>
       </div>
       <div className="scroll-container" ref={scrollContainerRef}>
         <div className="offer-item">
@@ -98,7 +110,12 @@ function Offers() {
             <p>
               <a href="#contacts">Contact us</a> for more SunKing products
             </p>
-            <button className="buy">Buy this item</button>
+            <div className="end-btns">
+              <button className="share">
+                <img src="../share.png" alt="Share" />
+              </button>
+              <button className="buy">Buy this item</button>
+            </div>
           </div>
         </div>
         <div className="offer-item">
@@ -123,7 +140,102 @@ function Offers() {
             <p>
               <a href="#contacts">Contact us</a> for more SunKing products
             </p>
-            <button className="buy">Buy this item</button>
+            <div className="end-btns">
+              <button className="share">
+                <img src="../share.png" alt="Share" />
+              </button>
+              <button className="buy">Buy this item</button>
+            </div>
+          </div>
+        </div>
+        <div className="offer-item">
+          <img src="../3kVA.jpg" />
+          <div className="details">
+            <h3>3kVA complete kit</h3>
+            <h4>
+              3kW inverter, two 12V200Ah batteries, four 450W panels, plus all
+              accessories, and installation charges
+            </h4>
+            <ul>
+              <li>
+                With Flooded batteries @<span>Ksh205,000/-</span>
+              </li>
+              <li>
+                With Gel batteries @<span>Ksh215,000/-</span>
+              </li>
+              <li>
+                With Lithium ion batteries @<span>Ksh245,000/-</span>
+              </li>
+            </ul>
+            <p>
+              <a href="#contacts">Contact us</a> for more information
+            </p>
+            <div className="end-btns">
+              <button className="share">
+                <img src="../share.png" alt="Share" />
+              </button>
+              <button className="buy">Buy this item</button>
+            </div>
+          </div>
+        </div>
+        <div className="offer-item">
+          <img src="../5kVA.jpg" />
+          <div className="details">
+            <h3>5kVA complete kit</h3>
+            <h4>
+              5kW inverter, four 12V200Ah batteries, eight 450W panels, plus all
+              accessories, and installation charges
+            </h4>
+            <ul>
+              <li>
+                With Flooded batteries @<span>Ksh390,000/-</span>
+              </li>
+              <li>
+                With Gel batteries @<span>Ksh410,000/-</span>
+              </li>
+              <li>
+                With Lithium ion batteries @<span>Ksh550,000/-</span>
+              </li>
+            </ul>
+            <p>
+              <a href="#contacts">Contact us</a> for more information
+            </p>
+            <div className="end-btns">
+              <button className="share">
+                <img src="../share.png" alt="Share" />
+              </button>
+              <button className="buy">Buy this item</button>
+            </div>
+          </div>
+        </div>
+        <div className="offer-item">
+          <img src="../10kVA.jpg" />
+          <div className="details">
+            <h3>10kVA complete kit</h3>
+            <h4>
+              10kW inverter, 10kWh battery pack, 16 450W panels, plus all
+              accessories, and installation charges
+            </h4>
+            <ul>
+              <li>
+                With Flooded batteries @<span>Ksh750,000/-</span>
+              </li>
+              <li>
+                With Gel batteries @<span>Ksh850,000/-</span>
+              </li>
+              <li>
+                With Lithium ion batteries @<span>Ksh999,000/-</span>
+              </li>
+            </ul>
+            <p>
+              <a href="#contacts">Contact us</a> for more information
+            </p>
+            <div className="end-btns">
+              <button className="share">
+                <img src="../share.png" alt="Share" />
+              </button>
+              <button className="buy">Buy this item</button>
+            </div>
           </div>
         </div>
       </div>
