@@ -38,10 +38,11 @@
   width: 50vw;
   min-width: 30em;
   height: fit-content;
+  padding: 0 2em;
 }
 
 #cont h3 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 400;
   color: white;
   text-align: center;
@@ -49,13 +50,11 @@
 }
 
 #cont p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.5;
   color: white;
   text-align: center;
-  width: 50vw;
-  min-width: 20em;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
 }
 

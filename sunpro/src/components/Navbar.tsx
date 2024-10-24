@@ -33,8 +33,8 @@ const Navbar: React.FC = () => {
             <li
               className="navItem"
               id="shop"
-              onMouseEnter={toggleDropdown}
-              onMouseLeave={closeDropdown}
+              onClick={toggleDropdown}
+              onMouseOut={closeDropdown}
             >
               Shop
               <ul
@@ -53,8 +53,8 @@ const Navbar: React.FC = () => {
             <li
               className="navItem"
               id="services"
-              onMouseEnter={toggleDropdown}
-              onMouseLeave={closeDropdown}
+              onClick={toggleDropdown}
+              onMouseOut={closeDropdown}
             >
               What we do
               <ul
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
             <a href="#blog&offers" className="navItem" id="blog&offers">
               <li>News & Offers</li>
             </a>
-            <a href="sunpro-contacts.html" className="navItem" id="contacts">
+            <a href="sunpro-contacts.html" className="navItem">
               <li>Contact us</li>
             </a>
           </ul>

@@ -73,10 +73,8 @@ nav img:hover {
 .dropMenu {
   display: none;
   position: absolute;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  border: 1px solid rgba(27, 94, 32, 0.18);
+  background: var(--white);
+  border-top: 1px solid var(--dark-green);
   border-radius: 5px;
   padding: 0.25em 0.5em;
   color: var(--dark-green);
@@ -136,7 +134,7 @@ nav img:hover {
 @media screen and (max-width: 700px) {
   .mobile {
     display: block;
-    width: 1.5em;
+    width: 2em;
     z-index: 99;
     border-radius: 5px;
     position: absolute;
@@ -145,7 +143,7 @@ nav img:hover {
   }
 
   .mobile img {
-    height: 1.3em;
+    height: 1.5em;
     padding: 0.3em;
   }
 
@@ -166,15 +164,14 @@ nav img:hover {
     top: 4em;
     width: 15em;
     margin-top: 2em;
-    padding: 0.5em 0;
-    border: 1px solid var(--dark-green);
+    padding: 1.2em 0;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease-in-out;
   }
 
   .nav-links:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 
   .open {
@@ -183,10 +180,11 @@ nav img:hover {
 
   .navItem {
     text-align: left;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     width: 80%;
     border-radius: 3px;
-    margin-left: 0;
+    margin: 0.1em 0;
+    background-color: white;
   }
 
   .dropMenu {
