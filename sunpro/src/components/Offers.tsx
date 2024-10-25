@@ -1,10 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./offers.css";
+import { items, Item } from "./items";
+import OrderForm from "./OrderForm";
 
 const Offers: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isMouseActive, setIsMouseActive] = useState(true);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
   const [openDetails, setOpenDetails] = useState<string | null>(null);
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -37,16 +39,16 @@ const Offers: React.FC = () => {
     }
   };
 
-  const [isPopUpVisible, setIsPopUpVisible] = useState(false);
-  const [isShareVisible, setIsShareVisible] = useState(false);
-
   const toggleDet = (item: string) => {
     setOpenDetails((prev) => (prev === item ? null : item));
   };
 
-  const togglePopUp = (item: string) => {
-    setIsPopUpVisible(!isPopUpVisible);
+  const handleViewClick = (item: Item) => {
     setSelectedItem(item);
+  };
+
+  const closeOrderForm = () => {
+    setSelectedItem(null);
   };
 
   const [copied, setCopied] = useState(false);
@@ -118,75 +120,7 @@ const Offers: React.FC = () => {
         </div>
       </div>
       <div className="scroll-container" ref={scrollContainerRef}>
-        {[
-          {
-            imgSrc: "../power-play.png",
-            title: "PowerPlay Pro",
-            details: "A 600W inverter and 800Wh Lithium ion battery combo",
-            priceDetails: [
-              { desc: "PowerPlay Pro @", price: "Ksh67,000/-" },
-              { desc: "With lighting kit @", price: "Ksh72,000/-" },
-              { desc: "With two 220W solar panels @", price: "Ksh85,000/-" },
-            ],
-            id: "powerplay",
-          },
-          {
-            imgSrc: "../home-8k.png",
-            title: "Home 8000",
-            details:
-              "3.3kW inverter, 2.56kWh Lithium ion battery, and four 450W solar panels",
-            priceDetails: [
-              {
-                desc: "Inverter, one battery, & four panels @",
-                price: "Ksh250,000/-",
-              },
-              {
-                desc: "Inverter, two batteries, & six panels @",
-                price: "Ksh365,000/-",
-              },
-              {
-                desc: "Inverter, two batteries, & eight panels @",
-                price: "Ksh400,000/-",
-              },
-            ],
-            id: "home8000",
-          },
-          {
-            imgSrc: "../3kVA.jpg",
-            title: "3kVA complete kit",
-            details:
-              "3kW inverter, two 12V200Ah batteries, and four 450W panels",
-            priceDetails: [
-              { desc: "With Flooded batteries @", price: "Ksh205,000/-" },
-              { desc: "With Gel batteries @", price: "Ksh215,000/-" },
-              { desc: "With Lithium ion batteries @", price: "Ksh245,000/-" },
-            ],
-            id: "3kva",
-          },
-          {
-            imgSrc: "../5kVA.jpg",
-            title: "5kVA complete kit",
-            details:
-              "5kW inverter, four 12V200Ah batteries, and eight 450W panels",
-            priceDetails: [
-              { desc: "With Flooded batteries @", price: "Ksh390,000/-" },
-              { desc: "With Gel batteries @", price: "Ksh410,000/-" },
-              { desc: "With Lithium ion batteries @", price: "Ksh550,000/-" },
-            ],
-            id: "5kva",
-          },
-          {
-            imgSrc: "../10kVA.jpg",
-            title: "10kVA complete kit",
-            details: "10kW inverter, 10kWh battery pack, and 16 - 450W panels",
-            priceDetails: [
-              { desc: "With Flooded batteries @", price: "Ksh750,000/-" },
-              { desc: "With Gel batteries @", price: "Ksh850,000/-" },
-              { desc: "With Lithium ion batteries @", price: "Ksh999,000/-" },
-            ],
-            id: "10kva",
-          },
-        ].map((item, index) => (
+        {items.map((item, index) => (
           <div className="offer-item" key={index}>
             <img src={item.imgSrc} alt={item.title} />
             <div
@@ -208,56 +142,16 @@ const Offers: React.FC = () => {
                 <button className="share" onClick={handleShareClick}>
                   {copied ? "Link copied!" : "Share link"}
                 </button>
-                <button className="order" onClick={() => togglePopUp(item.id)}>
-                  Order
-                </button>
+                <button onClick={() => handleViewClick(item)}>View</button>
               </div>
-              {isPopUpVisible && selectedItem === item.id && (
-                <div className="pop-up" id={item.id}>
-                  <button
-                    className="close"
-                    onClick={() => togglePopUp(item.id)}
-                  >
-                    <img src="../exe.png" alt="Close" />
-                  </button>
-                  <ul>
-                    {item.priceDetails.map((priceDetail, i) => (
-                      <li key={i}>
-                        {priceDetail.desc}
-                        <span>{priceDetail.price}</span>
-                        {i === 0 && (
-                          <button className="order" id={item.id}>
-                            Order
-                          </button>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  <p>
-                    <a href="#contacts">Contact us</a> for more such products
-                  </p>
-                </div>
-              )}
             </div>
           </div>
         ))}
       </div>
-      <div className={`pop-up ${isPopUpVisible ? "show" : ""}`}>
-        <button
-          className="close"
-          onClick={() => togglePopUp(selectedItem || "")}
-        >
-          <img src="../exe.png" alt="Close" />
-        </button>
-        <form>
-          <label>
-            Selected Item:
-            <input type="text" value={selectedItem || ""} readOnly />
-          </label>
-          {/* Add other form fields here */}
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+
+      {selectedItem && (
+        <OrderForm selectedItem={selectedItem} onClose={closeOrderForm} />
+      )}
     </div>
   );
 };
