@@ -5,12 +5,11 @@ const Intro = () => {
     <>
       <div id="intro">
         <div id="text">
-          <h2>Save big on energy bills!</h2>
-          <hr />
-          <h3>
-            <b>*Protip: </b>Harness Solar Power to Energize Your Home and Heat
-            Your Water!
-          </h3>
+          <h2>Sunpro Power Systems</h2>
+          <p>
+            We are committed to transforming lives with reliable, sustainable,
+            and affordable solar power and innovative energy solutions
+          </p>
         </div>
       </div>
     </>

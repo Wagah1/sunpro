@@ -33,10 +33,12 @@ function Services() {
             <p>+</p>
           </div>
           <p>successful projects</p>
-          <div id="hire">
-            <img src="../star.png" alt=" " />
-            <p>Hire us</p>
-          </div>
+          <a href="#footer">
+            <div id="hire">
+              <img src="../star.png" alt=" " />
+              <p>Hire us</p>
+            </div>
+          </a>
         </div>
       </div>
       <div id="solutions">

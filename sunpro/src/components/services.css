@@ -39,7 +39,7 @@
 #quality h2 {
   font-size: 1.5em;
   line-height: 1.5;
-  font-weight: 450;
+  font-weight: 300;
   margin: 0 1em;
 }
 
@@ -66,7 +66,7 @@
 #count {
   display: flex;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 300;
   align-items: center;
   color: var(--dark-green);
   margin-right: -2em;
@@ -91,6 +91,7 @@
   align-items: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 
 #hire:hover {
@@ -100,7 +101,7 @@
 #hire p {
   margin: 0 -1.5em;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 #hire img {
@@ -181,7 +182,7 @@
 
 .words h2 {
   margin: 0;
-  font-weight: 450;
+  font-weight: 300;
   font-size: 1.5em;
 }
 
@@ -189,9 +190,8 @@
   text-align: center;
   margin: 0.5em;
   line-height: 1.5;
-  font-weight: 500;
-  font-size: 1em;
   font-weight: 300;
+  font-size: 1em;
 }
 
 .service:hover .words {

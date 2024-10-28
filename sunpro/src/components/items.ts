@@ -2,6 +2,10 @@ export interface Item {
   id: string;
   title: string;
   cap: string;
+  priceDetails: {
+    desc: string;
+    price: number;
+  }[];
 }
 
 export const items = [
@@ -15,7 +19,7 @@ export const items = [
       { desc: "With two 220W solar panels @", price: 85000 },
     ],
     id: "powerplay",
-    cap: "This system is ideal for up to a one-bedroom house. It can run your TV, lights, WiFi router, and other small appliances. It is not ideal for any heating appliances.",
+    cap: "This system is ideal for up to a one-bedroom house. It can run your TV, lights, WiFi router, and other small appliances. It is not ideal for any heating appliances. The cost also caters for all accessories and installation fees",
   },
   {
     imgSrc: "../home-8k.jpg",
@@ -37,7 +41,7 @@ export const items = [
       },
     ],
     id: "home8000",
-    cap: "This system is ideal for up to a two-bedroom house. It can run your TV, fridge, lights, WiFi router, and other small appliances. It is not ideal for any heating appliances.",
+    cap: "This system is ideal for up to a two-bedroom house. It can run your TV, fridge, lights, WiFi router, and other small appliances. It is not ideal for any heating appliances. The cost also caters for all accessories and installation fees",
   },
   {
     imgSrc: "../3kVA.jpg",
@@ -49,7 +53,7 @@ export const items = [
       { desc: "With Lithium ion batteries @", price: 245000 },
     ],
     id: "3kva",
-    cap: "This system is ideal for up to a two-bedroom house. It can run your TV, fridge, lights, WiFi router, and other small appliances. It is not ideal for any heating appliances.",
+    cap: "This system is ideal for up to a two-bedroom house. It can run your TV, fridge, lights, WiFi router, and other small appliances. It is not ideal for any heating appliances. The cost also caters for all accessories and installation fees",
   },
   {
     imgSrc: "../5kVA.jpg",
@@ -61,7 +65,7 @@ export const items = [
       { desc: "With Lithium ion batteries @", price: 550000 },
     ],
     id: "5kva",
-    cap: "This system is ideal for up to a four-bedroom house. It can run your TV, fridge, freezer, washing machine, iron box, microwave oven, blender, electric kettle, lights, WiFi router, and other small appliances. It is not ideal for instant water heaters / electric shower",
+    cap: "This system is ideal for up to a four-bedroom house. It can run your TV, fridge, freezer, washing machine, iron box, microwave oven, blender, electric kettle, lights, WiFi router, and other small appliances. It is not ideal for instant water heaters / electric shower. The cost also caters for all accessories and installation fees",
   },
   {
     imgSrc: "../10kVA.jpg",
@@ -73,6 +77,6 @@ export const items = [
       { desc: "With Lithium ion batteries @", price: 999000 },
     ],
     id: "10kva",
-    cap: "This system is ideal for a 4+ bedroom house. It can run your TV, fridge, freezer, washing machine, iron box, microwave oven, blender, electric kettle, air-fryer, induction cooker, lights, WiFi router, and other small appliances. We recommend coupling it with a solar water heating system to avoid excessive heating costs",
+    cap: "This system is ideal for a 4+ bedroom house. It can run your TV, fridge, freezer, washing machine, iron box, microwave oven, blender, electric kettle, air-fryer, induction cooker, lights, WiFi router, and other small appliances. We recommend coupling it with a solar water heating system to avoid excessive heating costs. The cost also caters all accessories and installation fees",
   },
 ];

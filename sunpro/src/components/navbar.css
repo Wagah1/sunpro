@@ -57,7 +57,8 @@ nav img:hover {
   transition: border 0.3s ease-in-out;
   text-decoration: none;
   color: var(--dark-green);
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 1em;
   text-align: center;
   height: fit-content;
   position: relative;
@@ -78,7 +79,8 @@ nav img:hover {
   border-radius: 5px;
   padding: 0.25em 0.5em;
   color: var(--dark-green);
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 1em;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   z-index: 99;
   top: 3.5em;

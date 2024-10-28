@@ -112,10 +112,10 @@ const Offers: React.FC = () => {
         <h3>Featured packages</h3>
         <div id="scroll-btns">
           <button onClick={scrollPrev} className="scroll-button">
-            <img src="../previous.png" alt=" " />
+            <img src="../previous.png" alt="<" />
           </button>
           <button onClick={scrollNext} className="scroll-button">
-            <img src="../next.png" alt=" " />
+            <img src="../next.png" alt=">" />
           </button>
         </div>
       </div>

@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
               onClick={toggleDropdown}
               onMouseOut={closeDropdown}
             >
-              What we do
+              <a href="#servicesDiv">What we do</a>
               <ul
                 className={`dropMenu ${isDropdownOpen ? "show" : ""}`}
                 id="servicesMenu"
@@ -69,10 +69,14 @@ const Navbar: React.FC = () => {
                 <li className="dropItem">Consultation</li>
               </ul>
             </li>
-            <a href="#blog&offers" className="navItem" id="blog&offers">
+            <a
+              href="#horizontal-scroll-container"
+              className="navItem"
+              id="blog&offers"
+            >
               <li>News & Offers</li>
             </a>
-            <a href="sunpro-contacts.html" className="navItem">
+            <a href="#footer" className="navItem">
               <li>Contact us</li>
             </a>
           </ul>

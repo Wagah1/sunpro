@@ -4,7 +4,7 @@ const Partners = () => {
   return (
     <>
       <div id="whole">
-        <h3>We are proud to partner with:</h3>
+        <h3>We proudly partner with:</h3>
         <div id="partners">
           <a
             href="https://sunking.com/"
@@ -52,8 +52,10 @@ const Partners = () => {
           >
             <img src="../surechill.png" alt="Surechill" />
           </a>
-          <a href="index.html" id="sunpro">
-            <img src="sunpro3.png" alt="Sunpro" />
+        </div>
+        <div id="sunpro">
+          <a href="index.html">
+            <img src="sunpro.png" alt="Sunpro" />
             Partner with us
           </a>
         </div>

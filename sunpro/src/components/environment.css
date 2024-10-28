@@ -12,7 +12,7 @@
 }
 
 #env {
-  background-image: url("../env.jpg");
+  background-image: url("../hills.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,7 +22,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-top: 0;
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -38,15 +38,21 @@
   width: 50vw;
   min-width: 30em;
   height: fit-content;
-  padding: 0 2em;
+  padding: 1em 2em;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 #cont h3 {
-  font-size: 1.5em;
-  font-weight: 400;
+  font-size: 2em;
+  font-weight: 300;
   color: white;
   text-align: center;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5em;
 }
 
 #cont p {
@@ -55,11 +61,11 @@
   line-height: 1.5;
   color: white;
   text-align: center;
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #env button {
-  background-color: var(--orange);
+  background-color: none;
   color: white;
   border-radius: 5px;
   line-height: 1.2;
@@ -73,12 +79,10 @@
   right: 4em;
   bottom: 2em;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 300;
   transition: 0.3s ease-in-out;
 }
 
 #env button:hover {
-  background-color: var(--white);
-  color: var(--dark-green);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
 }
