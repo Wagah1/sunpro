@@ -1,14 +1,16 @@
 :root {
-  --main-green: #146204;
-  --dark-green: #1b5e20;
-  --medium-green: #388e3c;
+  --main-green: #004d14;
+  --dark-green: #005a31;
+  --medium-green: #00703d;
   --light-green: #66bb6a;
   --pastel-green: #a5d6a7;
-  --white: #f4f5f4;
-  --orange: #ff6700;
+  --white: #f6f7f2;
+  --orange: #ff6b18;
+  --orange2: #ff8c01;
   --grey: #272727;
   --black: #000;
   --lighter-grey: #4d4d4d;
+  --darker: #e1e5dc;
 }
 
 #whole {

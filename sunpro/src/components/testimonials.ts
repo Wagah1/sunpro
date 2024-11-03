@@ -37,7 +37,7 @@ export const testimonials = [
   {
     imgSrc: "../elec1.jpg",
     client: "Saituma Cynthia",
-    location: "MKitengela",
+    location: "Kitengela",
     id: 6,
     cap: "I was woried about the cost of wiring my new house until I heard about Sunpro. I am now recommending them to my friends",
   },

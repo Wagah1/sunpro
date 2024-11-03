@@ -1,14 +1,16 @@
 :root {
-  --main-green: #146204;
-  --dark-green: #1b5e20;
-  --medium-green: #388e3c;
+  --main-green: #004d14;
+  --dark-green: #005a31;
+  --medium-green: #00703d;
   --light-green: #66bb6a;
   --pastel-green: #a5d6a7;
-  --white: #f4f5f4;
-  --orange: #ff6700;
+  --white: #f6f7f2;
+  --orange: #ff6b18;
+  --orange2: #ff8c01;
   --grey: #272727;
   --black: #000;
   --lighter-grey: #4d4d4d;
+  --darker: #e1e5dc;
 }
 
 .testimonials-container {
@@ -47,11 +49,10 @@
 
 #scrollers button {
   background: white;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   width: 1.75em;
   height: 1.75em;
-  border: none;
   margin: 0.25em;
   display: inline-flex;
   justify-content: center;
@@ -60,8 +61,8 @@
 }
 
 #scrollers button:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  background-color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--pastel-green);
 }
 
 #scrollers button img {
@@ -72,21 +73,22 @@
 .testimonial {
   display: flex;
   align-items: center;
-  width: 47vw;
-  padding: 1em;
+  width: 29em;
+  padding: 0.5em;
   box-sizing: border-box;
   margin: 0.5em;
   border: 2px solid white;
   border-radius: 5px;
+  transition: all 1s linear;
 }
 
 .testimonial:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial img {
-  width: 12em;
-  height: 12em;
+  width: 10em;
+  height: 10em;
   margin-right: 1em;
   object-fit: cover;
   border-radius: 5px;
@@ -96,6 +98,7 @@
   display: flex;
   flex-direction: column;
   font-weight: 300;
+  padding-right: 0.5em;
 }
 
 .testimonial-text h4 {
@@ -106,10 +109,4 @@
 
 .testimonial-text p {
   text-align: justify;
-}
-
-@media (max-width: 800px) {
-  .testimonial {
-    width: 100vw;
-  }
 }

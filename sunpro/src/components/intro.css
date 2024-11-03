@@ -1,14 +1,16 @@
 :root {
-  --main-green: #146204;
-  --dark-green: #1b5e20;
-  --medium-green: #388e3c;
+  --main-green: #004d14;
+  --dark-green: #005a31;
+  --medium-green: #00703d;
   --light-green: #66bb6a;
   --pastel-green: #a5d6a7;
-  --white: #f4f5f4;
-  --orange: #ff6700;
+  --white: #f6f7f2;
+  --orange: #ff6b18;
+  --orange2: #ff8c01;
   --grey: #272727;
   --black: #000;
   --lighter-grey: #4d4d4d;
+  --darker: #e1e5dc;
 }
 
 * {
@@ -18,75 +20,67 @@
 }
 
 #intro {
-  background-image: url("../intro.jpg");
+  background-image: url("../solar.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-top: 0;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-content: center;
 }
 
-#text {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  height: 60%;
-  width: fit-content;
-  max-width: 45em;
-  position: relative;
-  margin-top: 10em;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px); /* For Safari */
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  padding: 3em;
+#content {
+  background: linear-gradient(
+    150deg,
+    rgb(0, 83, 192) 0,
+    rgba(0, 83, 192, 0.75) 25%,
+    rgb(0, 83, 192, 0.5) 50%,
+    rgba(0, 255, 42, 0.25) 75%,
+    rgba(0, 90, 49, 0) 100%
+  );
+  height: 100%;
+  width: 100%;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2em;
+  padding-bottom: 4em;
 }
 
-#text h2 {
-  font-size: 3em;
+#content button {
+  color: var(--grey);
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  width: fit-content;
+  padding: 0.25em 1em;
+  font-size: 1.25em;
   font-weight: 300;
-  text-align: center;
-  color: white;
+  border-radius: 5px;
 }
 
-#text p {
-  font-size: 1.5em;
-  font-weight: 300;
-  text-align: center;
+#content button:hover {
+  transform: scale(1.02);
+  background-color: var(--white);
+}
+
+#content p {
+  font-size: 2.5em;
+  font-weight: 350;
+  text-align: left;
   color: var(--white);
 }
 
-body {
-  margin-left: 0;
-  overflow-x: hidden;
+#p {
+  width: 40em;
 }
 
-@media screen and (max-width: 700px) {
-  #intro {
-    margin-top: -2em;
-    justify-content: center;
-  }
-
-  #text {
-    max-width: 75vw;
-    margin: 2em;
-    justify-items: center;
-  }
-
-  #text h2 {
-    text-align: center;
-  }
-  body {
-    overflow-x: hidden;
+@media screen and (max-width: 600px) {
+  #p {
+    width: 90vw;
   }
 }

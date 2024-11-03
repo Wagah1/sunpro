@@ -28,43 +28,45 @@ const OrderForm: React.FC<OrderFormProps> = ({ selectedItem, onClose }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const emailContent = `
-      Order Summary:
-      
-      Selected Item: ${selectedItem}
-      Order configuration: ${selectedOption}
-      Customer Name: ${customerName}
-      Email address: ${customerEmail}
-      Phone number: ${customerPhone}
-      Location: ${customerTown}
-      Custom Message: ${orderMessage || "No message provided"}
-    `;
+    const emailContent =
+      "Customer name: " +
+      customerName +
+      "\n Customer location: " +
+      customerTown +
+      "\n Selected item: " +
+      selectedItem.title +
+      "\n Preferred configuration: " +
+      selectedOption +
+      "\n Order message: " +
+      orderMessage +
+      "\n Contact details:- \n  Tel:" +
+      customerPhone +
+      "\n  Email: " +
+      customerEmail;
 
     const templateParams = {
-      name: customerName,
-      email: customerEmail,
+      from_name: customerName,
       message: emailContent,
+      customer_email: customerEmail,
+      customer_phone: customerPhone,
     };
 
-    emailjs
-      .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
-        templateParams,
-        "YOUR_USER_ID" // Replace with your EmailJS user ID
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          alert(
-            "Your order submitted successfully. Await response from our team"
-          );
-        },
-        (err) => {
-          console.error("FAILED", err);
-          alert("Your oreder has not been sent, please retry after some time");
-        }
-      );
+    const serviceID = "default_service";
+    const templateID = "template_k1fqtqp";
+    const userID = "aJpaBhT-WGFzmjYaH";
+
+    emailjs.send(serviceID, templateID, templateParams, userID).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert(
+          "Your order has been sent successfully. Await response from our team"
+        );
+      },
+      (err) => {
+        console.error("FAILED", err);
+        alert("Your order has not been sent, please try again later");
+      }
+    );
   };
 
   return (
@@ -91,11 +93,16 @@ const OrderForm: React.FC<OrderFormProps> = ({ selectedItem, onClose }) => {
                 type="radio"
                 name="orderConfig"
                 value={selectedItem.priceDetails[0].desc}
-                checked={selectedOption === selectedItem.priceDetails[0].desc}
+                checked={
+                  selectedOption ===
+                  selectedItem.priceDetails[0].desc +
+                    " @ Ksh " +
+                    selectedItem.priceDetails[0].price
+                }
                 onChange={handleInputChange}
               />
               {selectedItem.priceDetails[0].desc +
-                " Ksh " +
+                " @ Ksh " +
                 selectedItem.priceDetails[0].price}
             </label>
 
@@ -104,11 +111,16 @@ const OrderForm: React.FC<OrderFormProps> = ({ selectedItem, onClose }) => {
                 type="radio"
                 name="orderConfig"
                 value={selectedItem.priceDetails[1].desc}
-                checked={selectedOption === selectedItem.priceDetails[1].desc}
+                checked={
+                  selectedOption ===
+                  selectedItem.priceDetails[1].desc +
+                    " @ Ksh " +
+                    selectedItem.priceDetails[1].price
+                }
                 onChange={handleInputChange}
               />
               {selectedItem.priceDetails[1].desc +
-                " Ksh " +
+                " @ Ksh " +
                 selectedItem.priceDetails[1].price}
             </label>
 
@@ -117,11 +129,16 @@ const OrderForm: React.FC<OrderFormProps> = ({ selectedItem, onClose }) => {
                 type="radio"
                 name="orderConfig"
                 value={selectedItem.priceDetails[2].desc}
-                checked={selectedOption === selectedItem.priceDetails[2].desc}
+                checked={
+                  selectedOption ===
+                  selectedItem.priceDetails[2].desc +
+                    " @ Ksh " +
+                    selectedItem.priceDetails[2].price
+                }
                 onChange={handleInputChange}
               />
               {selectedItem.priceDetails[2].desc +
-                " Ksh " +
+                " @ Ksh " +
                 selectedItem.priceDetails[2].price}
             </label>
           </div>

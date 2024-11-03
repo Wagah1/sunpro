@@ -32,49 +32,53 @@ const Footer = () => {
     setSelectedService("");
     setName("");
     setEmail("");
-    setMessage("");
+    setMessage(" ");
   };
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const emailContent = `
-      Customer message summary:
-      
-      Customer Name: ${name}
-      Email address: ${email}
-      Phone number: ${phone}
-      Location: ${location}
-      About: ${selectedService}
-      Custom Message: ${message}
-    `;
+    const emailContent =
+      "Client name: " +
+      name +
+      "\n Client location: " +
+      location +
+      "\n Meassage topic: " +
+      selectedService +
+      "\n Message: " +
+      message +
+      ".\n Contact details:- \n Phone:" +
+      phone +
+      "\n Email: " +
+      email;
 
     const templateParams = {
-      name: name,
-      email: email,
+      from_name: name,
       message: emailContent,
+      customer_email: email,
+      customer_phone: phone,
     };
 
-    emailjs
-      .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
-        templateParams,
-        "YOUR_USER_ID" // Replace with your EmailJS user ID
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("Your meassage has been. Please await response from our team");
-        },
-        (err) => {
-          console.error("FAILED", err);
-          alert("Your message has not been sent, please retry after some time");
-        }
-      );
+    const serviceID = "default_service";
+    const templateID = "template_k1fqtqp";
+    const userID = "aJpaBhT-WGFzmjYaH";
+
+    emailjs.send(serviceID, templateID, templateParams, userID).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert(
+          "Your message has been sent successfully. Await response from our team"
+        );
+      },
+      (err) => {
+        console.error("FAILED", err);
+        alert("Your message has not been sent, please try again later");
+      }
+    );
   };
   return (
     <div id="footer">
       <div className="contact-form">
-        <h3>Contact us</h3>
+        <h3>Talk to us</h3>
         <p>Fill this form and we will get in touch with you</p>
         <form onSubmit={handleSubmit}>
           <div className="fields">
@@ -91,7 +95,10 @@ const Footer = () => {
               <option value="Solar Installation">Solar Installation</option>
               <option value="Electrical Wiring">Electrical Wiring</option>
               <option value="CCTV Installation">CCTV Installation</option>
-              <option value="Inquiry">Inquiry</option>
+              <option value="Computer Networking">Computer Networking</option>
+              <option value="Inquiry/Consultation">
+                Inquiry or Consultation
+              </option>
             </select>
           </div>
           <div className="fields">
@@ -168,21 +175,21 @@ const Footer = () => {
           <div className="address">
             <img src="call.png" alt="Call us" />
             <p>
-              Call us on:
+              Call:
               <a href="tel:+254727895108"> +254727 895 108</a>
             </p>
           </div>
           <div className="address">
             <img src="whatsapp.png" alt="WhatsApp" />
             <p>
-              Chat with us on WhatsApp:
+              Chat:
               <a href="https://wa.me/+254727895108"> +254727 895 108</a>
             </p>
           </div>
           <div className="address">
             <img src="email.png" alt="send us an email" />
             <p>
-              Email us on:
+              Email:
               <a href="mailto:georgewagah6@gmail.com">
                 {" "}
                 georgewagah6@gmail.com
@@ -191,7 +198,7 @@ const Footer = () => {
           </div>
           <div className="address">
             <img src="location.png" alt="where to find us" />
-            <p>We will serve you all over Kenya</p>
+            <p>Nairobi, Kenya</p>
           </div>
           <div className="address">
             <img src="copyright.png" alt="copyrighted to" />

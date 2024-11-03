@@ -19,7 +19,7 @@ function Services() {
   return (
     <div id="servicesDiv">
       <div id="quality">
-        <h2>Quality assurance</h2>
+        <h2>Why choose us</h2>
         <p>
           Our team of experts is trained to ensure a seamless process from
           sizing and budgeting to implementation. We offer a six-month
@@ -33,72 +33,74 @@ function Services() {
             <p>+</p>
           </div>
           <p>successful projects</p>
-          <a href="#footer">
-            <div id="hire">
-              <img src="../star.png" alt=" " />
-              <p>Hire us</p>
-            </div>
-          </a>
         </div>
+        <a href="#footer">
+          <div id="hire">
+            <p>Get a free quote today!</p>
+          </div>
+        </a>
       </div>
       <div id="solutions">
         <div className="service" id="solar">
-          <div className="back-fade">
-            <div className="words">
-              <h2>Solar Installation</h2>
-              <p>
-                Get a hybrid solar home system and forget, power instability,
-                blackouts, and costly power bills
-              </p>
-              <div className="learn">
-                <p>Learn more</p>
-                <img src="../arrow-white.png" alt=" " />
-              </div>
+          <img src="../panels.jpg" />
+          <div className="words">
+            <h2>Solar Installation</h2>
+            <p>
+              Switch to a hybrid solar home system to eliminate power
+              instability, blackouts, and high electricity bills. Enjoy
+              reliable, sustainable, and cost-effective energy for your home
+            </p>
+            <div className="learn">
+              <a href="#footer">
+                <p>Get service</p>
+              </a>
             </div>
           </div>
         </div>
         <div className="service" id="electricals">
-          <div className="back-fade">
-            <div className="words">
-              <h2>Electrical Services</h2>
-              <p>
-                Experience quality grade installation on your electrical wiring
-                system. We focus on safety and durability
-              </p>
-              <div className="learn">
-                <p>Learn more</p>
-                <img src="../arrow-white.png" alt=" " />
-              </div>
+          <img src="../electrical.jpg" />
+          <div className="words">
+            <h2>Electrical services</h2>
+            <p>
+              We conduct electrical wiring services with a focus on safety,
+              neatness, and durability, ensuring we work within your budget
+            </p>
+            <div className="learn">
+              <a href="#footer">
+                <p>Get service</p>
+              </a>
             </div>
           </div>
         </div>
         <div className="service" id="water-heater">
-          <div className="back-fade">
-            <div className="words">
-              <h2>Solar water heater</h2>
-              <p>
-                Let the sun do the warming for you and say goodbye to expensive
-                electricity bills from electric water heaters
-              </p>
-              <div className="learn">
-                <p>Learn more</p>
-                <img src="../arrow-white.png" alt=" " />
-              </div>
+          <img src="../water-heater.jpg" />
+          <div className="words">
+            <h2>Solar Water Heater</h2>
+            <p>
+              Save on power bills by harnessing solar energy for water heating.
+              Explore various solar water heater options available in the market
+              here
+            </p>
+            <div className="learn">
+              <a href="#footer">
+                <p>Get service</p>
+              </a>
             </div>
           </div>
         </div>
         <div className="service" id="cctv">
-          <div className="back-fade">
-            <div className="words">
-              <h2>Networks and CCTV</h2>
-              <p>
-                Enhance your security with high quality surveillance and
-                seamless connection between your devices
-              </p>
-              <div className="learn">
-                <p>Learn more</p>
-                <img src="../arrow-white.png" alt=" " />
-              </div>
+          <img src="../cctv.jpg" />
+          <div className="words">
+            <h2>CCTV and Networks</h2>
+            <p>
+              Enhance your security with our professional CCTV installation.
+              Contact us for network connectivity and troubleshooting services
+              for your home and office
+            </p>
+            <div className="learn">
+              <a href="#footer">
+                <p>Get service</p>
+              </a>
             </div>
           </div>
         </div>

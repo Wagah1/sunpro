@@ -1,14 +1,16 @@
 :root {
-  --main-green: #146204;
-  --dark-green: #1b5e20;
-  --medium-green: #388e3c;
+  --main-green: #004d14;
+  --dark-green: #005a31;
+  --medium-green: #00703d;
   --light-green: #66bb6a;
   --pastel-green: #a5d6a7;
-  --white: #f4f5f4;
-  --orange: #ff6700;
+  --white: #f6f7f2;
+  --orange: #ff6b18;
+  --orange2: #ff8c01;
   --grey: #272727;
   --black: #000;
   --lighter-grey: #4d4d4d;
+  --darker: #e1e5dc;
 }
 
 * {
@@ -35,7 +37,7 @@
   width: fit-content;
   margin: 1em;
   position: relative;
-  border-radius: 5px;
+  border-radius: 3px;
   height: 27.5em;
   padding: 0.5em;
 }
@@ -57,7 +59,7 @@
 
 #action-btns {
   position: absolute;
-  right: 1em;
+  right: 2.2em;
   bottom: -4em;
 }
 
@@ -67,7 +69,7 @@
   color: var(--white);
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  border-radius: 5px;
+  border-radius: 3px;
   line-height: 1.5;
   align-items: center;
   font-size: 1em;
@@ -78,20 +80,20 @@
   text-wrap: nowrap;
 }
 
-#submit {
+#action-btns #submit {
   border: 1px solid var(--pastel-green);
 }
 
-#cancel {
+#action-btns #cancel {
   border: 1px solid var(--orange);
 }
 
-#submit:hover {
+#action-btns #submit:hover {
   background-color: var(--pastel-green);
   color: var(--black);
 }
 
-#cancel:hover {
+#action-btns #cancel:hover {
   background-color: var(--orange);
 }
 
@@ -108,7 +110,7 @@
 }
 
 #service-select {
-  border-radius: 5px;
+  border-radius: 3px;
   background: none;
   border: 1px solid var(--pastel-green);
   color: white;
@@ -122,7 +124,7 @@
 
 #service-select option {
   background-color: var(--white);
-  border-radius: 5px;
+  border-radius: 3px;
   color: var(--grey);
   margin: 0.25em;
 }
@@ -131,7 +133,7 @@
   display: flex;
   align-items: center;
   background-color: none;
-  border-radius: 5px;
+  border-radius: 3px;
   margin: 0.2em;
   padding-right: 1em;
   cursor: pointer;
@@ -140,7 +142,7 @@
 .fields input {
   background: none;
   border: 1px solid var(--pastel-green);
-  border-radius: 5px;
+  border-radius: 3px;
   line-height: 1.5;
   font-size: 1em;
   font-weight: 300;
@@ -162,7 +164,7 @@
   font-weight: 300;
   background: none;
   border: 1px solid var(--pastel-green);
-  border-radius: 5px;
+  border-radius: 3px;
   margin: 0 1em;
   color: var(--white);
   line-height: normal;
@@ -177,7 +179,7 @@
   padding: 2em;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 1em;
   font-weight: 300;
 }
@@ -197,11 +199,12 @@
 }
 
 .address img {
-  width: 1.5em;
-  margin: 0 0.5em;
-  border: 1px solid var(--pastel-green);
-  border-radius: 5px;
-  padding: 0.15em;
+  width: 1.75em;
+  margin: 0.25em 0.75em;
+  border-right: 1px solid var(--pastel-green);
+  border-bottom: 1px solid var(--pastel-green);
+  border-radius: 3px;
+  padding: 0.25em;
 }
 
 @media screen and (max-width: 800px) {

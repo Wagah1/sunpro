@@ -14,7 +14,7 @@ const Offers: React.FC = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       container.style.transition = "transform 0.5s ease-in-out";
-      container.style.transform = "translateX(-18em)";
+      container.style.transform = "translateX(-20em)";
       setTimeout(() => {
         container.style.transition = "none";
         container.style.transform = "translateX(0)";
@@ -31,7 +31,7 @@ const Offers: React.FC = () => {
         container.lastElementChild as Node,
         container.firstElementChild
       );
-      container.style.transform = "translateX(-18em)";
+      container.style.transform = "translateX(-20em)";
       setTimeout(() => {
         container.style.transition = "transform 0.5s ease-in-out";
         container.style.transform = "translateX(0)";

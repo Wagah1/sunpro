@@ -1,25 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home.tsx";
+import Shop from "./Shop";
 import Navbar from "./components/Navbar.tsx";
-import Intro from "./components/Intro.tsx";
-import Services from "./components/Services.tsx";
-import Offers from "./components/Offers.tsx";
-import Environment from "./components/Environment.tsx";
-import Partners from "./components/Partners.tsx";
-import Testimonials from "./components/Testimonials.tsx";
-import Footer from "./components/Footer.tsx";
 
-const App = () => {
+export default function App() {
   return (
-    <div>
-      <Intro />
-      <Services />
-      <Environment />
-      <Offers />
-      <Partners />
-      <Testimonials />
-      <Footer />
-      <Navbar />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />}>
+            <Route path="home" index element={<Home />} />
+            <Route path="shop" element={<Shop />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-};
-
-export default App;
+}

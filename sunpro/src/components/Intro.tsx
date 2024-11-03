@@ -1,18 +1,27 @@
+import React from "react";
 import "./intro.css";
+import TextScroller from "./TextScroller"; // Import the TextScroller component
 
-const Intro = () => {
+const Intro: React.FC = () => {
+  const services = [
+    "Solar PV Systems",
+    "Electrical Systems",
+    "Solar Water Heaters",
+    "CCTV and Local Area Networks",
+  ];
+
   return (
-    <>
-      <div id="intro">
-        <div id="text">
-          <h2>Sunpro Power Systems</h2>
-          <p>
-            We are committed to transforming lives with reliable, sustainable,
-            and affordable solar power and innovative energy solutions
-          </p>
+    <div id="intro">
+      <div id="content">
+        <div id="p">
+          <p>We specialize in the installation, maintenance, and repair of:</p>
         </div>
+        <TextScroller texts={services} />
+        <a href="#servicesDiv">
+          <button>Our services</button>
+        </a>
       </div>
-    </>
+    </div>
   );
 };
 

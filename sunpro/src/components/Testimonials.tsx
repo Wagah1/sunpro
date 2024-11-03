@@ -1,10 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { testimonials } from "./testimonials";
 import "./testimonials.css";
 
 const Testimonials: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isMouseActive, setIsMouseActive] = useState(true);
   const scrollInterval = useRef<NodeJS.Timeout | null>(null);
 
   // Function to scroll to the next testimonial
@@ -12,7 +11,7 @@ const Testimonials: React.FC = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       container.style.transition = "transform 0.5s ease-in-out";
-      container.style.transform = "translateX(-50vw)";
+      container.style.transform = "translateX(-30em)";
 
       setTimeout(() => {
         container.style.transition = "none";
@@ -31,7 +30,7 @@ const Testimonials: React.FC = () => {
         container.lastElementChild as Node,
         container.firstElementChild
       );
-      container.style.transform = "translateX(-50vw)";
+      container.style.transform = "translateX(-30em)";
       setTimeout(() => {
         container.style.transition = "transform 0.5s ease-in-out";
         container.style.transform = "translateX(0)";
@@ -39,7 +38,7 @@ const Testimonials: React.FC = () => {
     }
   };
 
-  // Automatically scroll every 10 seconds
+  // Automatically scroll every 20 seconds
   useEffect(() => {
     scrollInterval.current = setInterval(scrollNext, 20000);
 
