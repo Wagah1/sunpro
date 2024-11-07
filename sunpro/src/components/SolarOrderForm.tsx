@@ -46,9 +46,7 @@ interface RepairMaintenanceFormProps {
   onSubmit: (data: RepairMaintenanceData) => void;
 }
 
-const NewInstallationForm: React.FC<NewInstallationFormProps> = ({
-  onSubmit,
-}) => {
+const NewInstallationForm: React.FC<NewInstallationFormProps> = () => {
   const [installationType, setInstallationType] = useState<string>("");
   const [systemDetails, setSystemDetails] = useState({
     inverter: { name_type: "", size: "", quantity: "" },
@@ -89,40 +87,53 @@ const NewInstallationForm: React.FC<NewInstallationFormProps> = ({
   const handleSubCategoryChange = (e: ChangeEvent<HTMLInputElement>) =>
     setSubCategory(e.target.value);
 
+  const generateEmailContent = (
+    systemDetails: {
+      inverter: { name_type: string; size: string; quantity: string };
+      batteries: { name_type: string; size: string; quantity: string };
+      solarPanels: { name_type: string; size: string; quantity: string };
+    },
+    personalDetails: {
+      name: string;
+      email: string;
+      phone: string;
+      location: string;
+      message: string;
+    }
+  ) => {
+    return `
+    Service Request Details
+    Name: ${personalDetails.name}
+    Email: ${personalDetails.email}
+    Phone: ${personalDetails.phone}
+    Location: ${personalDetails.location}
+
+    ${
+      installationType === "bought"
+        ? `
+      Bought the following items:
+        Inverter name: ${systemDetails.inverter.name_type}
+        Inverter size: ${systemDetails.inverter.size} W
+        Inverter quantity: ${systemDetails.inverter.quantity} units
+        Battery name and type: ${systemDetails.batteries.name_type} 
+        Battery size: ${systemDetails.batteries.size} V/Ah
+        Battery quantity: ${systemDetails.batteries.quantity} units
+        Panel name and type: ${systemDetails.solarPanels.name_type}
+        Panel size: ${systemDetails.solarPanels.size} W
+        Panel quantity: ${systemDetails.solarPanels.quantity} panels
+      `
+        : `
+        New installation request:
+        Max budget: Ksh ${subCategory} 
+      `
+    }
+    Additional Message: ${personalDetails.message}
+  `;
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const emailContent =
-      "Customer name: " +
-      personalDetails.name +
-      "\n Customer location: " +
-      personalDetails.location +
-      "\n Installation type: " +
-      installationType +
-      "\n Inverter details: " +
-      systemDetails.inverter.name_type +
-      ", " +
-      systemDetails.inverter.size +
-      "W, " +
-      systemDetails.inverter.quantity +
-      " units" +
-      "\n Battery details: " +
-      systemDetails.batteries.name_type +
-      ", " +
-      systemDetails.batteries.size +
-      " V/Ah, " +
-      systemDetails.batteries.quantity +
-      " units" +
-      "\n Solar panels: " +
-      systemDetails.solarPanels.name_type +
-      ", " +
-      systemDetails.solarPanels.size +
-      "W, " +
-      systemDetails.solarPanels.quantity +
-      " panels" +
-      "\n Max budget: Ksh " +
-      subCategory +
-      "k \n Message: " +
-      personalDetails.message;
+    const emailContent = generateEmailContent(systemDetails, personalDetails);
 
     const templateParams = {
       from_name: personalDetails.name,
@@ -364,13 +375,13 @@ const NewInstallationForm: React.FC<NewInstallationFormProps> = ({
                     <input
                       key={i}
                       type="radio"
-                      id={(500 + i * 50).toString()}
-                      value={(500 + i * 50).toString()}
-                      checked={subCategory === (500 + i * 50).toString()}
+                      id={(550 + i * 50).toString()}
+                      value={(550 + i * 50).toString()}
+                      checked={subCategory === (550 + i * 50).toString()}
                       onChange={handleSubCategoryChange}
                     />
-                    <label htmlFor={(500 + i * 50).toString()}>
-                      Ksh {500 + i * 50}k
+                    <label htmlFor={(550 + i * 50).toString()}>
+                      Ksh {550 + i * 50}k
                     </label>
                   </>
                 ))}
@@ -462,28 +473,37 @@ const RepairMaintenanceForm: React.FC<RepairMaintenanceFormProps> = () => {
     setDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
   };
 
+  const generateEmail = (details: {
+    name: string;
+    phone: string;
+    email: string;
+    location: string;
+    systemSize: string;
+    installer: string;
+    installerCompanyName: string;
+    installerContact: string;
+    problemDescription: string;
+  }) => {
+    return `Repair and Maintenance Service
+    Name: ${details.name}
+    Phone: ${details.phone}
+    Email: ${details.email}
+    Location: ${details.location}
+    Sytem size: ${details.systemSize}
+    Installer: ${
+      details.installer === "sunpro"
+        ? "Sunpro"
+        : details.installerCompanyName +
+          " ( Contact: " +
+          details.installerContact +
+          " )"
+    }
+    Issue: ${details.problemDescription}`;
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const emailContent =
-      "Customer name: " +
-      details.name +
-      "\n Customer phone: " +
-      details.phone +
-      "\n Customer email: " +
-      details.email +
-      "\n Customer location: " +
-      details.location +
-      "\n Repair/Maintenance" +
-      "\n System size: " +
-      details.systemSize +
-      " Installed by: " +
-      details.installer +
-      ", " +
-      details.installerCompanyName +
-      " " +
-      details.installerContact +
-      "\n Problem description: " +
-      details.problemDescription;
+    const emailContent = generateEmail(details);
 
     const templateParams = {
       from_name: details.name,
@@ -598,7 +618,7 @@ const RepairMaintenanceForm: React.FC<RepairMaintenanceFormProps> = () => {
           </>
         )}
         <label>
-          Problem Description:{" "}
+          Problem Detail:{" "}
           <textarea
             name="problemDescription"
             required

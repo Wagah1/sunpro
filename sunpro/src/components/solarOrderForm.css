@@ -150,7 +150,7 @@ input[type="radio"] {
   width: 100%;
   margin: 0.5em;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-self: center;
   justify-content: center;
   border-radius: 5px;
@@ -190,11 +190,11 @@ input[type="radio"] {
 }
 
 .name {
-  width: 27.5em;
+  width: 22.5em;
 }
 
 .name input {
-  width: 15em;
+  width: 12.5em;
 }
 
 .size {
@@ -322,7 +322,7 @@ input[type="radio"] {
 }
 
 #details label {
-  width: 30em;
+  width: 22.5em;
   margin: 1em;
   display: flex;
   align-items: center;
@@ -336,7 +336,7 @@ input[type="radio"] {
 #details label textarea,
 #details label select {
   background-color: white;
-  width: 20em;
+  width: 15em;
   border: 1px solid var(--darker);
   box-shadow: none;
   padding: 0.25em 1em;
@@ -369,13 +369,13 @@ input[type="radio"] {
   width: 45em;
   height: 6em;
   justify-self: center;
+  display: flex;
+  justify-content: center;
   margin: 2em;
 }
 
 .submit-btn {
-  position: absolute;
-  right: 1em;
-  bottom: 2em;
+  position: relative;
   color: var(--white);
   padding: 0.3em 0.8em;
   background-color: var(--medium-green);
@@ -398,4 +398,18 @@ input[type="radio"] {
 .submit-btn:hover {
   background-color: var(--light-green);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 800px) {
+  .bought-item {
+    justify-content: flex-start;
+  }
+
+  .bought-item label {
+    width: 25em;
+    justify-content: flex-start;
+  }
+
+  .bought-item label input {
+    margin: 0 1em;
+  }
 }
