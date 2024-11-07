@@ -17,7 +17,7 @@
   background-color: var(--white);
   width: 100vw;
   height: fit-content;
-  padding: 2em 0;
+  padding: 1em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +39,7 @@
 }
 
 #quality h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.5;
   font-weight: 300;
 }
@@ -64,7 +64,7 @@
   align-items: center;
   font-size: 2em;
   font-weight: 400;
-  padding: 0 0.5em;
+  padding: 0 0.25em;
   color: var(--orange);
   width: 4em;
   border-radius: 5px;
@@ -90,20 +90,20 @@
 #hire {
   height: fit-content;
   width: 50vw;
-  background-color: var(--dark-green);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--grey);
   border-radius: 5px;
   transition: 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
   cursor: pointer;
   margin: 1em;
 }
 
 #hire:hover {
-  background-color: var(--medium-green);
+  background-color: white;
 }
 
 #hire p {
@@ -180,7 +180,7 @@
 }
 
 .learn {
-  height: fit-content;
+  height: 2em;
   width: fit-content;
   background-color: var(--orange2);
   color: var(--white);

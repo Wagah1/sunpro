@@ -45,6 +45,7 @@
   margin: 0.5em;
   padding: 1em;
   display: flex;
+  align-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
   border: 1px solid var(--white);

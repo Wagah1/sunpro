@@ -129,7 +129,9 @@ const Offers: React.FC = () => {
               <div className="det-head" onClick={() => toggleDet(item.id)}>
                 <h3>{item.title}</h3>
                 <img
-                  src={openDetails === item.id ? "../down.png" : "../up.png"}
+                  src={
+                    openDetails === item.id ? "../close-b.png" : "../open-w.png"
+                  }
                   alt={openDetails === item.id ? "Close" : "Open"}
                 />
               </div>

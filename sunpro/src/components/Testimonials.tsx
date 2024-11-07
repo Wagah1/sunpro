@@ -52,7 +52,7 @@ const Testimonials: React.FC = () => {
   return (
     <div className="testimonials-container">
       <div className="testimonials-header">
-        <h3>Happy Clients</h3>
+        <h3>What our clients say:</h3>
         <div id="scrollers">
           <button onClick={scrollPrev}>
             <img src="../previous.png" alt="<" />

@@ -55,7 +55,7 @@ const Partners = () => {
         </div>
         <div id="sunpro">
           <a href="index.html">
-            <img src="sunpro.png" alt="Sunpro" />
+            <img src="sunpro10.png" alt="Sunpro" />
             Partner with us
           </a>
         </div>

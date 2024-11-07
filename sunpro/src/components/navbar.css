@@ -29,6 +29,7 @@ nav {
   justify-content: space-between;
   margin: 0;
   position: fixed;
+  z-index: 999;
   border-bottom: 1px solid var(--pastel-green);
 }
 

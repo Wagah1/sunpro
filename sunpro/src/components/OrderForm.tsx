@@ -92,7 +92,11 @@ const OrderForm: React.FC<OrderFormProps> = ({ selectedItem, onClose }) => {
               <input
                 type="radio"
                 name="orderConfig"
-                value={selectedItem.priceDetails[0].desc}
+                value={
+                  selectedItem.priceDetails[0].desc +
+                  " @ Ksh " +
+                  selectedItem.priceDetails[0].price
+                }
                 checked={
                   selectedOption ===
                   selectedItem.priceDetails[0].desc +
@@ -110,7 +114,11 @@ const OrderForm: React.FC<OrderFormProps> = ({ selectedItem, onClose }) => {
               <input
                 type="radio"
                 name="orderConfig"
-                value={selectedItem.priceDetails[1].desc}
+                value={
+                  selectedItem.priceDetails[1].desc +
+                  " @ Ksh " +
+                  selectedItem.priceDetails[1].price
+                }
                 checked={
                   selectedOption ===
                   selectedItem.priceDetails[1].desc +
@@ -128,7 +136,11 @@ const OrderForm: React.FC<OrderFormProps> = ({ selectedItem, onClose }) => {
               <input
                 type="radio"
                 name="orderConfig"
-                value={selectedItem.priceDetails[2].desc}
+                value={
+                  selectedItem.priceDetails[2].desc +
+                  " @ Ksh " +
+                  selectedItem.priceDetails[2].price
+                }
                 checked={
                   selectedOption ===
                   selectedItem.priceDetails[2].desc +

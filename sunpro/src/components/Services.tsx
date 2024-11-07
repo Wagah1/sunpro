@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Outlet, Link } from "react-router-dom";
 import "./services.css";
 
 function Services() {
@@ -51,9 +52,7 @@ function Services() {
               reliable, sustainable, and cost-effective energy for your home
             </p>
             <div className="learn">
-              <a href="#footer">
-                <p>Get service</p>
-              </a>
+              <Link to="/solarForm">Get Service</Link>
             </div>
           </div>
         </div>
@@ -105,6 +104,7 @@ function Services() {
           </div>
         </div>
       </div>
+      <Outlet />
     </div>
   );
 }

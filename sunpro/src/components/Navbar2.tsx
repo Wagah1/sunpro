@@ -22,7 +22,7 @@ const Navbar2: React.FC = () => {
     <>
       <nav>
         <Link to="/home">
-          <img src="sunpro4a.png" alt="Sunpro" id="logo" />
+          <img src="sunpro-logo.png" alt="Sunpro" id="logo" />
         </Link>
         <div className="mobile" onClick={toggleMenu}>
           <img
@@ -68,7 +68,7 @@ const Navbar2: React.FC = () => {
               className="navItem"
               id="blog&offers"
             >
-              <li>News & Offers</li>
+              <li>Offers</li>
             </a>
             <a href="#footer" className="navItem">
               <li>Contact us</li>

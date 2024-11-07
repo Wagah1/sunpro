@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home.tsx";
 import Shop from "./Shop";
 import Navbar from "./components/Navbar.tsx";
+import SolarOrderForm from "./components/SolarOrderForm.tsx";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
           <Route path="/" element={<Navbar />}>
             <Route path="home" index element={<Home />} />
             <Route path="shop" element={<Shop />} />
+            <Route path="solarForm" element={<SolarOrderForm />} />
           </Route>
         </Routes>
       </BrowserRouter>
