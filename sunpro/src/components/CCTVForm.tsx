@@ -63,7 +63,7 @@ const CCTVForm: React.FC<CCTVFormProps> = ({ selected, onClose }) => {
     <div className="cctv-form" id="cctv-view">
       <div className="cctv-det" id="cctv-det">
         <h3>
-          Battery details:
+          CCTV kit details:
           <br /> {selected.name} @{" "}
           <span className="bold"> Ksh {selected.price}/-</span>
         </h3>

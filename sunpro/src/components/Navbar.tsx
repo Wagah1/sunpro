@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
     <>
       <nav>
         <Link to="/home">
-          <img src="sunpro-logo.png" alt="Logo" id="logo" />
+          <img src="../sunpro-logo.png" alt="Logo" id="logo" />
         </Link>
         <div className="mobile" onClick={toggleMenu}>
           <img
@@ -43,38 +43,32 @@ const Navbar: React.FC = () => {
                 className={`dropMenu ${openDropdown === "shop" ? "show" : ""}`}
                 id="shopMenu"
               >
-                <li className="dropItem">Solar panels</li>
-                <li className="dropItem">Solar inverters</li>
-                <li className="dropItem">Solar batteries</li>
-                <li className="dropItem">Sunking Products</li>
-                <li className="dropItem">Solar water heaters</li>
-                <li className="dropItem">CCTV Kits</li>
+                <li className="dropItem">
+                  <Link to="/shop/panels">Solar panels</Link>
+                </li>
+                <li className="dropItem">
+                  <Link to="/shop/inverters">Solar inverters</Link>
+                </li>
+                <li className="dropItem">
+                  <Link to="/shop/batteries">Solar batteries</Link>
+                </li>
+                <li className="dropItem">
+                  <Link to="/shop/water-heaters">Solar water heaters</Link>
+                </li>
+                <li className="dropItem">
+                  <Link to="/shop/sunking">Sunking Products</Link>
+                </li>
+                <li className="dropItem">
+                  <Link to="/shop/cctv-kits">CCCTV Kits</Link>
+                </li>
               </ul>
             </li>
-            <li
-              className="navItem"
-              id="services"
-              onClick={() => handleDropdown("services")}
-              onMouseLeave={closeDropdown}
-            >
-              <a href="#servicesDiv">What we do</a>
-              <ul
-                className={`dropMenu ${
-                  openDropdown === "services" ? "show" : ""
-                }`}
-                id="servicesMenu"
-              >
-                <li className="dropItem">Solar installation</li>
-                <li className="dropItem">Electrical Services</li>
-                <li className="dropItem">Solar water heater</li>
-                <li className="dropItem">Networks & CCTV</li>
-                <li className="dropItem">Operation & Maintenance</li>
-                <li className="dropItem">Consultation</li>
-              </ul>
+            <li className="navItem" id="services">
+              <Link to="/home/services">What we do</Link>
             </li>
-            <a href="#footer" className="navItem">
-              <li>Contact us</li>
-            </a>
+            <li className="navItem">
+              <Link to="/home/footer">Contact us</Link>
+            </li>
           </ul>
         </div>
       </nav>

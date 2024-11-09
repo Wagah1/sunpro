@@ -38,15 +38,14 @@ const Footer = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const emailContent =
-      "Client name: " +
       name +
-      "\n Client location: " +
+      " from " +
       location +
-      "\n Meassage topic: " +
+      "\n About " +
       selectedService +
       "\n Message: " +
       message +
-      ".\n Contact details:- \n Phone:" +
+      ".\n Phone:" +
       phone +
       "\n Email: " +
       email;
@@ -173,35 +172,41 @@ const Footer = () => {
         </p>
         <div id="address">
           <div className="address">
-            <img src="call.png" alt="Call us" />
+            <img src="../call.png" alt="Call us" />
             <p>
               Call:
-              <a href="tel:+254727895108"> +254727 895 108</a>
+              <a href="tel:+254727895108" target="_blank">
+                {" "}
+                +254727 895 108
+              </a>
             </p>
           </div>
           <div className="address">
-            <img src="whatsapp.png" alt="WhatsApp" />
+            <img src="../whatsapp.png" alt="WhatsApp" />
             <p>
               Chat:
-              <a href="https://wa.me/+254727895108"> +254727 895 108</a>
+              <a href="https://wa.me/+254727895108" target="_blank">
+                {" "}
+                +254727 895 108
+              </a>
             </p>
           </div>
           <div className="address">
-            <img src="email.png" alt="send us an email" />
+            <img src="../email.png" alt="send us an email" />
             <p>
               Email:
-              <a href="mailto:georgewagah6@gmail.com">
+              <a href="mailto:georgewagah6@gmail.com" target="_blank">
                 {" "}
                 georgewagah6@gmail.com
               </a>
             </p>
           </div>
           <div className="address">
-            <img src="location.png" alt="where to find us" />
+            <img src="../location.png" alt="where to find us" />
             <p>Nairobi, Kenya</p>
           </div>
           <div className="address">
-            <img src="copyright.png" alt="copyrighted to" />
+            <img src="../copyright.png" alt="copyrighted to" />
             <p>2024 - Sunpro Power Systems</p>
           </div>
         </div>

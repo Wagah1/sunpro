@@ -5,7 +5,6 @@ import Environment from "./components/Environment";
 import Partners from "./components/Partners";
 import Testimonials from "./components/Testimonials.tsx";
 import Footer from "./components/Footer.tsx";
-import Navbar from "./components/Navbar.tsx";
 import Roadmap from "./components/Roadmap.tsx";
 
 const Home = () => (
@@ -18,7 +17,6 @@ const Home = () => (
     <Partners />
     <Testimonials />
     <Footer />
-    <Navbar />
   </div>
 );
 

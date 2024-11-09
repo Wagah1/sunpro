@@ -124,7 +124,11 @@ const NewInstallationForm: React.FC<NewInstallationFormProps> = () => {
       `
         : `
         New installation request:
-        Max budget: Ksh ${subCategory} 
+        Budget: ${
+          budgetCategory === "category4"
+            ? "Above Ksh 1m"
+            : `Ksh ${subCategory} max`
+        } 
       `
     }
     Additional Message: ${personalDetails.message}
@@ -336,8 +340,8 @@ const NewInstallationForm: React.FC<NewInstallationFormProps> = () => {
                       key={i}
                       id={(50 + i * 25).toString()}
                       type="radio"
-                      value={(50 + i * 25).toString()}
-                      checked={subCategory === (50 + i * 25).toString()}
+                      value={(50 + i * 25).toString() + "k"}
+                      checked={subCategory === (50 + i * 25).toString() + "k"}
                       onChange={handleSubCategoryChange}
                     />
                     <label htmlFor={(50 + i * 25).toString()}>
@@ -356,8 +360,8 @@ const NewInstallationForm: React.FC<NewInstallationFormProps> = () => {
                       key={i}
                       type="radio"
                       id={(275 + i * 25).toString()}
-                      value={(275 + i * 25).toString()}
-                      checked={subCategory === (275 + i * 25).toString()}
+                      value={(275 + i * 25).toString() + "k"}
+                      checked={subCategory === (275 + i * 25).toString() + "k"}
                       onChange={handleSubCategoryChange}
                     />
                     <label htmlFor={(275 + i * 25).toString()}>
@@ -376,12 +380,12 @@ const NewInstallationForm: React.FC<NewInstallationFormProps> = () => {
                       key={i}
                       type="radio"
                       id={(550 + i * 50).toString()}
-                      value={(550 + i * 50).toString()}
-                      checked={subCategory === (550 + i * 50).toString()}
+                      value={(550 + i * 50).toString() + "k"}
+                      checked={subCategory === (550 + i * 50).toString() + "k"}
                       onChange={handleSubCategoryChange}
                     />
                     <label htmlFor={(550 + i * 50).toString()}>
-                      Ksh {550 + i * 50}k
+                      Ksh {550 + i * 50 === 1000 ? "1m" : 550 + i * 50 + "k"}
                     </label>
                   </>
                 ))}

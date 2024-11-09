@@ -132,6 +132,7 @@
   margin: 0.75em 0;
   display: flex;
   justify-content: flex-start;
+  cursor: pointer;
   align-items: center;
 }
 

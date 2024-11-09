@@ -1,4 +1,3 @@
-import Navbar2 from "./components/Navbar2.tsx";
 import SolarPanels from "./components/Solar-panels.tsx";
 import Inverters from "./components/Inverters.tsx";
 import Footer from "./components/Footer.tsx";
@@ -14,12 +13,11 @@ const Shop = () => {
       <SolarPanels />
       <Inverters />
       <Batteries />
-      <Sunking />
       <WaterHeaters />
+      <Sunking />
       <CCTVKits />
       <Offers />
       <Footer />
-      <Navbar2 />
     </div>
   );
 };

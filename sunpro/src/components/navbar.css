@@ -28,7 +28,7 @@ nav {
   top: 0;
   justify-content: space-between;
   margin: 0;
-  position: fixed;
+  position: static;
   z-index: 999;
   border-bottom: 1px solid var(--pastel-green);
 }
@@ -38,11 +38,11 @@ nav img {
   margin-left: 0.5em;
   transition: 0.3s ease-in-out;
   border-radius: 5px;
+  background-color: var(--white);
 }
 
 nav img:hover {
-  transform: scale(1.05);
-  background-color: var(--white);
+  transform: scale(1.075);
 }
 
 .nav-links {
@@ -147,7 +147,7 @@ nav img:hover {
     z-index: 99;
     border-radius: 5px;
     position: absolute;
-    right: 3em;
+    right: 2em;
     cursor: pointer;
   }
 
@@ -157,9 +157,9 @@ nav img:hover {
   }
 
   nav {
-    position: absolute;
-    background: none;
+    position: fixed;
     height: fit-content;
+    background: none;
     align-items: flex-start;
     margin-top: 0;
     border: none;

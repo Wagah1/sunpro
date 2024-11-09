@@ -24,11 +24,26 @@
         font-size: 1em;
         cursor: pointer;
       }
+
+      #whatsapp {
+        position: fixed;
+        right: 1.25em;
+        bottom: 3.5em;
+        width: 3em;
+        justify-items: center;
+        background-color: white;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+        padding: 0.5em;
+        border-radius: 50%;
+      }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <a href="https://wa.me/+254727895108" target="_blank" id="whatsapp">
+      <img src="../whatsapp-green.png" alt="Chat" />
+    </a>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   </body>
   <script>
