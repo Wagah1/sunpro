@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./solarOrderForm.css";
 import emailjs from "emailjs-com";
-import { solarPanels } from "./solar-panels";
 
 interface SystemDetails {
   name_type: string;
