@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home.tsx";
 import Shop from "./Shop";
@@ -18,21 +19,19 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar />}>
-            <Route path="home" index element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="shop" element={<Shop />} />
             <Route path="solarForm" element={<SolarOrderForm />} />
+            <Route path="#footer" element={<Footer />} />
+            <Route path="#servicesDiv" element={<Services />} />
           </Route>
-          <Route path="/shop" element={<Navbar />}>
-            <Route path="panels" element={<SolarPanels />} />
-            <Route path="inverters" element={<Inverters />} />
-            <Route path="batteries" element={<Batteries />} />
-            <Route path="water-heaters" element={<WaterHeaters />} />
-            <Route path="sunking" element={<Sunking />} />
-            <Route path="cctv-kits" element={<CCTVKits />} />
-          </Route>
-          <Route path="/home" element={<Navbar />}>
-            <Route path="footer" element={<Footer />} />
-            <Route path="services" element={<Services />} />
+          <Route path="/shop" element={<Shop />}>
+            <Route path="#panels-container" element={<SolarPanels />} />
+            <Route path="#inverters-container" element={<Inverters />} />
+            <Route path="#batteries-container" element={<Batteries />} />
+            <Route path="#heaters-container" element={<WaterHeaters />} />
+            <Route path="#sunking-container" element={<Sunking />} />
+            <Route path="#cctvKits-container" element={<CCTVKits />} />
           </Route>
         </Routes>
       </BrowserRouter>

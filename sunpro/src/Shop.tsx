@@ -1,6 +1,5 @@
 import SolarPanels from "./components/Solar-panels.tsx";
 import Inverters from "./components/Inverters.tsx";
-import Footer from "./components/Footer.tsx";
 import Batteries from "./components/Batteries.tsx";
 import Sunking from "./components/Sunking.tsx";
 import WaterHeaters from "./components/WaterHeaters.tsx";
@@ -17,7 +16,6 @@ const Shop = () => {
       <Sunking />
       <CCTVKits />
       <Offers />
-      <Footer />
     </div>
   );
 };

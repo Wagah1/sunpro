@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,10 +19,19 @@ const Navbar: React.FC = () => {
     setOpenDropdown(null);
   };
 
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <nav>
-        <Link to="/home">
+        <Link to="/">
           <img src="../sunpro-logo.png" alt="Logo" id="logo" />
         </Link>
         <div className="mobile" onClick={toggleMenu}>
@@ -44,30 +54,30 @@ const Navbar: React.FC = () => {
                 id="shopMenu"
               >
                 <li className="dropItem">
-                  <Link to="/shop/panels">Solar panels</Link>
+                  <Link to="/shop#panels-container">Solar panels</Link>
                 </li>
                 <li className="dropItem">
-                  <Link to="/shop/inverters">Solar inverters</Link>
+                  <Link to="/shop#inverters-container">Solar inverters</Link>
                 </li>
                 <li className="dropItem">
-                  <Link to="/shop/batteries">Solar batteries</Link>
+                  <Link to="/shop#batteries-container">Solar batteries</Link>
                 </li>
                 <li className="dropItem">
-                  <Link to="/shop/water-heaters">Solar water heaters</Link>
+                  <Link to="/shop#heaters-container">Solar water heaters</Link>
                 </li>
                 <li className="dropItem">
-                  <Link to="/shop/sunking">Sunking Products</Link>
+                  <Link to="/shop#sunking-container">Sunking Products</Link>
                 </li>
                 <li className="dropItem">
-                  <Link to="/shop/cctv-kits">CCCTV Kits</Link>
+                  <Link to="/shop#cctvKits-container">CCTV Kits</Link>
                 </li>
               </ul>
             </li>
             <li className="navItem" id="services">
-              <Link to="/home/services">What we do</Link>
+              <Link to="/#servicesDiv">What we do</Link>
             </li>
             <li className="navItem">
-              <Link to="/home/footer">Contact us</Link>
+              <Link to="/#footer">Contact us</Link>
             </li>
           </ul>
         </div>

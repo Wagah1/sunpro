@@ -122,13 +122,6 @@
   width: 18em;
 }
 
-#service-select option {
-  background-color: var(--white);
-  border-radius: 3px;
-  color: var(--grey);
-  margin: 0.25em;
-}
-
 .fields {
   display: flex;
   align-items: center;
@@ -157,6 +150,10 @@
 
 .fields label {
   width: 25%;
+}
+
+.fields select option {
+  color: var(--grey);
 }
 
 #message {
