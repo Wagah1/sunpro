@@ -1,5 +1,3 @@
-// ServiceArea.tsx
-
 import React, { useState } from "react";
 import { sector, ServiceItem, Area } from "./serviceArea";
 import "./serviceArea.css";
