@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./TextScroller.css";
+import "./textScroller.css";
 
 const TextScroller: React.FC<{ texts: string[] }> = ({ texts }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
