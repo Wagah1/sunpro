@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "./sunpro/src/*"
-  to = "./sunpro/index.html"
-  status = 200
