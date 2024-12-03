@@ -8,8 +8,5 @@
   publish = ".next"
   plugins = ["@netlify/plugin-nextjs"]
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
 [build.environment]
   NODE_VERSION = "18"
