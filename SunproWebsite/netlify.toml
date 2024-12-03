@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "./sunpro/src/*"
+  to = "./sunpro/index.html"
   status = 200
